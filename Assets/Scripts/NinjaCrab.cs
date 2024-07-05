@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+
+// INHERITENCE
 public class NinjaCrab : Crabs
 {
     private Rigidbody rb;
     [SerializeField] private BoxCollider boxCollider;
     [SerializeField] private ParticleSystem poufParticle;
     [SerializeField] private GameObject body;
+    private PlayerMovement playerMovement;
 
     private float force = 15f;
 
@@ -22,8 +25,15 @@ public class NinjaCrab : Crabs
         {
             rb.AddForce(Vector3.left * 100, ForceMode.Impulse);
         }
+
+        GameObject x = GameObject.FindWithTag("Player");
+        if (x != null)
+        {
+            playerMovement = x.GetComponent<PlayerMovement>();
+        }
     }
 
+    // POLYMORPHISM
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -33,10 +43,10 @@ public class NinjaCrab : Crabs
         }
         if (collision.gameObject.CompareTag("Player"))
         {
-            gameManager.GameOver();
+            playerMovement.IsHitted(gameObject);
         }
     }
-
+    // ABSTRACTION
     private IEnumerator RemoveCollisionsTemp()
     {
         boxCollider.isTrigger = true;

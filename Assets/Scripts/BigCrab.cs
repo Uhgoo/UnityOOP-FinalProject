@@ -39,7 +39,7 @@ public class BigCrab : MonoBehaviour
         }
 
     }
-
+    // ABSTRACTION
     private IEnumerator MoveUp()
     {
         Vector3 initialPos = transform.position;
@@ -61,6 +61,8 @@ public class BigCrab : MonoBehaviour
         }
     }
 
+
+    // ABSTRACTION
     private IEnumerator ShootMissile()
     {
         GameObject insMissile = Instantiate(missile, initialMissiliPos, initialMissiliRot);

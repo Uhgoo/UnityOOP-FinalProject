@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+// INHERITENCE
 public class WalkingCrab : Crabs
 {
     private float speed = 3f;

@@ -29,6 +29,7 @@ public class TraversableGround : MonoBehaviour
         }
     }
 
+    // ENCAPSULATION
     private float GetPlayerSizeYForPlat()
     {
         return playerCollider.bounds.size.y / 4;

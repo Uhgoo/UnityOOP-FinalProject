@@ -105,6 +105,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    // ABSTRACTION
     public void Explode()
     {
         rb.isKinematic = true;
@@ -131,6 +132,7 @@ public class PlayerMovement : MonoBehaviour
         renderer.material = originalMaterial;
     }
 
+    // ABSTRACTION
     public void IsHitted(GameObject other)
     {
         if (isPowerOn)

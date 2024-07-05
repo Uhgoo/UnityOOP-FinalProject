@@ -29,6 +29,7 @@ public class Menu : MonoBehaviour
         }
     }
 
+    // ENCAPSULATION
     private Vector3 GenerateRandomPos()
     {
         Vector3 pos = Vector3.zero;

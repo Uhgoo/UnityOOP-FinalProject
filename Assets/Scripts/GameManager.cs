@@ -111,6 +111,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // ABSTRACTION
     private void InstantiatePlayer()
     {
         player = Instantiate(foodList[MainManager.Instance.selectedFood], new Vector3(0, -6.5f, 0), Quaternion.identity);
@@ -152,11 +153,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // ABSTRACTION
     private void ActivateBigCrab()
     {
         GameObject.Find("GiantCrab").GetComponent<BigCrab>().isActive = true;
     }
 
+    // ABSTRACTION
     private IEnumerator ShowText(string toDisplay)
     {
         float maxSize = 70f;
@@ -175,6 +178,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // POLYMORPHISM
     private IEnumerator ShowText(string toDisplay, float time)
     {
         midText.text = toDisplay;
